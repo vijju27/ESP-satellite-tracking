@@ -1,6 +1,13 @@
 # ESP satellite tracking
 
-Using a ESP8266/ESP32 to fetch the satellite pass info and display the parameters on the E-Paper display.
+Using a ESP8266/ESP32 to fetch the satellite pass info from n2yo website using API and display the parameters on the E-Paper display.
+
+## Images
+<img src="https://github.com/vijju27/ESP-satellite-tracking/blob/master/fetching.jpg" alt="fetching logo" width="200" height="200"> | <img src="https://github.com/vijju27/ESP-satellite-tracking/blob/master/Pass.jpg" alt="passes" width="200" height="200">
+
+## Hardware used
+1. ESP32 Dev Board.
+2. 1.54 inch B/W E-paper display from waveshare.
 
 ## Steps for getting n2yo API KEY
 
@@ -32,6 +39,8 @@ with
 #include<ESP8266WiFi.h>
 GxEPD2_BW<GxEPD2_154, GxEPD2_154::HEIGHT> display(GxEPD2_154(/*CS=D8*/ SS, /*DC=D3*/ 0, /*RST=D4*/ 2, /*BUSY=D2*/ 4));
 ```
+I'm using a B/W 1.54 inch E-paper display. if you are using other display's make sure to change the above line with your display supported constructor from the examples found in GxEPD2 library.
+
 ### Variables
 Replace the NORAD ID of the satellite that you want to track. list can be found [here](https://www.n2yo.com/satellites/)
 ```C
