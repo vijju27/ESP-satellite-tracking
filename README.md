@@ -48,31 +48,45 @@ Replace the NORAD ID of the satellite that you want to track. list can be found 
 ```
 Enter your GPS co-ordinates and altitude
 ```C
-float Observer_Lat = 41.702;
-float Observer_Lon = -76.014;
+float Observer_Lat = 17.7227;
+float Observer_Lon = 79.1518;
 #define Altitude 0
 ```
 Number of days pass prediction data you want to fetch from n2yo
 ```C
 #define Days 1
 ```
-Minimum amount of time for the satellite passing above the horizon. Considered as a threshold
-```C
-#define Minimum_Seconds 300
-```
 Enter your API key and WiFi information here
 ```C
 String API_KEY = "PASTE N2YO API KEY HERE";
-#define SSID "Your WiFi Name"
-#define Password "Your WiFI Password"
+String IFTTT_API_KEY = "PASTE IFTTT WEBHOOKS API KEY HERE";
+String IFTTT_EVENT_NAME = "PASTE IFTTT WEBHOOKS TRIGGER NAME HERE";
+#define SSID "YOUR WIFI NAME/SSID"
+#define Password "YOUR WIFI PASSWORD"
 ```
-change it to true if you want to display only the next pass and false to display all the next passes fetched.
-Note : this line doesn't effect the data fetching.
+If you want to track multiple satellites then put the NORAD ID's of satellites in below array
 ```C
-boolean only_next_pass = false;//
+const int satellites_count = 5; // count should be matched with below list
+
+
+String satellites_list[satellites_count] = {
+  "44829", //ISS
+  "27607", //SO 50
+  "43017", //AO 91
+  "24278", //FO 29
+  "40967", //AO 85
+};
 ```
+Make below variable to true to enable single satellite tracking and false to track multiple satellites i.e satellites list
+
+```C
+boolean single_satellite = false;
+``` 
+
+
 ## Credits
 This code uses Open Source components. I am thankful to these developers for their contributions to open source.
+Kudos to each and every dev.
 
 
 
